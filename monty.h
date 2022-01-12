@@ -31,4 +31,18 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/*Global*/
+char *line;
+
+/*Function for stack*/
+void monty(char *pathname);
+void free_stack(stack_t *head);
+void check_instruction(stack_t *m_stack, unsigned int line_number);
+void free_instruct_op(instruction_t *instruct);
+void push(stack_t **head, unsigned int line_number);
+void print_all(stack_t **head, unsigned int line_number);
+
+/*Function string*/
+char *_strdup(char *str);
+
 #endif /*MONTY_H*/
