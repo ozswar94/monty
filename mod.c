@@ -21,14 +21,17 @@ void mod(stack_t **stack, unsigned int line_number)
 			fprintf(stderr, "L%u: division by zero\n", line_number);
 			global_command.error = 1;
 		}
-		t = (*stack)->n;
-		nx = (*stack)->next->n;
-		nx %= t;
-		tmp = *stack;
-		(*stack) = (*stack)->next;
-		(*stack)->prev = NULL;
-		(*stack)->n = nx;
-		free(tmp);
+		else
+		{
+			t = (*stack)->n;
+			nx = (*stack)->next->n;
+			nx %= t;
+			tmp = *stack;
+			(*stack) = (*stack)->next;
+			(*stack)->prev = NULL;
+			(*stack)->n = nx;
+			free(tmp);
+		}
 	}
 	else
 	{
