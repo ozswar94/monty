@@ -1,6 +1,14 @@
 #include "monty.h"
 
-void sub(stack_t **stack, unsigned int line_number)
+/**
+ * sub - subtract the top two elements of the stack.
+ * @stack: pointer to stack
+ * @line_number: line_number
+ * Return: always nothing
+ */
+
+
+void (stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp, *dlt;
 	int t, d, p;
@@ -21,7 +29,7 @@ void sub(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
-		printf("L<%d>: can't sub, stack too short\n", line_number);
+		printf("L%u: can't sub, stack too short\n", line_number);
 		global_command.error = 1;
 	}
 }

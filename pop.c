@@ -19,7 +19,7 @@ void pop(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
-		printf("L<%d>: can't pop an empty stack\n", line_number);
+		printf("L%u: can't pop an empty stack\n", line_number);
 		global_command.error = 1;
 	}
 }
