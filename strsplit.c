@@ -74,25 +74,6 @@ char **_strsplit(char *str, int c)
 }
 
 /**
-* free_dptr - free a pointer to pointer
-* @ptr: pointer
-*
-*/
-void free_dptr(char **ptr)
-{
-	int i;
-
-	i = 0;
-	while (ptr[i])
-	{
-		free(ptr[i]);
-		i++;
-	}
-	free(ptr);
-}
-
-
-/**
 * clean_line - clean tab and new line
 * @line: line of file
 *
@@ -101,6 +82,13 @@ void clean_line(char *line)
 {
 	unsigned int i;
 	unsigned int size;
+
+	if (line[0] == '#')
+	{
+		free(line);
+		line = NULL;
+		return;
+	}
 
 	size = strlen(line) - 1;
 	if (line[size] == '\n')
