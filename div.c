@@ -1,14 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "monty.h"
 
 /**
- * div - divides the top two elements of the stack.
+ * _div - divides the top two elements of the stack.
  * @stack: pointer to stack
  * @line_number: line_number
  * Return: always nothing
  */
 
-void *div(stack_t **stack, unsigned int line_number)
+void _div(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp, *dlt;
 	int t, d, p;
@@ -30,6 +29,6 @@ void *div(stack_t **stack, unsigned int line_number)
 	else
 	{
 		printf("L<%d>: can't div, stack too short\n", line_number);
-		exit(EXIT_FAILURE);
+		global_command.error = 1;
 	}
 }

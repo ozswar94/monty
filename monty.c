@@ -61,6 +61,8 @@ void check_instruction(stack_t **m_stack, unsigned int line_number)
 	instruction_t instruct[] = {
 		{"push", push},
 		{"pall", print_all},
+		{"pint", pint},
+		{"pop", pop},
 		{NULL, NULL},
 	};
 

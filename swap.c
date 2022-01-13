@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "monty.h"
 
 /**
  * swap - swaps the top two elements of the stack.
@@ -8,7 +7,7 @@
  * Return: always nothing
  */
 
-void *swap(stack_t **stack, unsigned int line_number)
+void swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp, *swp, *prev;
 
@@ -28,6 +27,6 @@ void *swap(stack_t **stack, unsigned int line_number)
 	else
 	{
 		printf("L<%d>: can't swap, stack too short\n", line_number);
-		exit(EXIT_FAILURE);
+		global_command.error = 1;
 	}
 }

@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "monty.h"
 
 /**
  * pop - remove the top element of the stack
@@ -8,21 +7,19 @@
  * Return: always nothing
  */
 
-void *pop(stack_t **stack, unsigned int line_number)
+void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *pop;
 
 	pop = *stack;
 	if (pop)
 	{
-		while (pop)
-			pop = pop->next;
-		pop->prev->next = NULL;
+		*stack = (*stack)->next;
 		free(pop);
 	}
 	else
 	{
 		printf("L<%d>: can't pop an empty stack\n", line_number);
-		exit(EXIT_FAILURE);
+		global_command.error = 1;
 	}
 }

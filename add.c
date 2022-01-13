@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "monty.h"
 
 /**
  * add - adds the top two elements of the stack.
@@ -8,7 +7,7 @@
  * Return: always nothing
  */
 
-void *add(stack_t **stack, unsigned int line_number)
+void add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp, *dlt;
 	int t, d, p;
@@ -30,6 +29,6 @@ void *add(stack_t **stack, unsigned int line_number)
 	else
 	{
 		printf("L<%d>: can't add, stack too short\n", line_number);
-		exit(EXIT_FAILURE);
+		global_command.error = 1;
 	}
 }

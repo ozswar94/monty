@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "monty.h"
 
 /**
  * nop - doesn’t do anything.
@@ -8,7 +7,7 @@
  * Return: always nothing
  */
 
-void *nop(stack_t **stack, unsigned int line_number)
+void nop(stack_t **stack, unsigned int line_number)
 {
 	(void)**stack;
 	(void)line_number;
