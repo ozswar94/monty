@@ -8,7 +8,7 @@
 void monty(char *pathname)
 {
 	FILE *m_file;
-	unsigned int line_number = 1;
+	unsigned int line_number = 0;
 	size_t len_line = 0;
 	char *line = NULL;
 	stack_t *m_stack = NULL;
@@ -19,7 +19,7 @@ void monty(char *pathname)
 		fprintf(stderr, "Error: Can't open file %s\n", pathname);
 		exit(EXIT_FAILURE);
 	}
-	while (1)
+	while (++line_number)
 	{
 		if (getline(&line, &len_line, m_file) == EOF)
 		{
@@ -28,13 +28,11 @@ void monty(char *pathname)
 			fclose(m_file);
 			return;
 		}
-		clean_line(line);
+		if (clean_line(line))
+			continue;
 		global_command.line = _strsplit(line, ' ');
 		if (global_command.line == NULL)
-		{
-			line_number++;
 			continue;
-		}
 		check_instruction(&m_stack, line_number);
 		if (global_command.error)
 		{
@@ -45,7 +43,6 @@ void monty(char *pathname)
 			exit(EXIT_FAILURE);
 		}
 		free_dptr(global_command.line);
-		line_number++;
 	}
 }
 

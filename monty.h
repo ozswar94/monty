@@ -79,7 +79,7 @@ void nop(stack_t **stack, unsigned int line_number);
 char *_strdup(char *str);
 char **_strsplit(char *str, int c);
 void free_dptr(char **ptr);
-void clean_line(char *line);
+int clean_line(char *line);
 int is_not_number(char *num);
 
 #endif /*MONTY_H*/
