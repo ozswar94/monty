@@ -46,6 +46,7 @@ typedef struct command_s
 } command_t;
 
 /*Global*/
+extern command_t global_command;
 command_t global_command;
 
 /*Function for stack*/
