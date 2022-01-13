@@ -9,5 +9,5 @@ pint
 push 5
 pint
 pall
-swap
+add
 pall
