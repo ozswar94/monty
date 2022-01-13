@@ -2,7 +2,7 @@ push 1
 pint
 push 6
 pint
-push 3
+push 0
 pint
 div
 pint
