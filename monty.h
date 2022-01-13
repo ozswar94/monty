@@ -31,18 +31,36 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+
+/**
+* struct command_s - opcode and its function
+* @line: line of command
+* @error: code error
+*
+* Description: handle commad + error
+*/
+typedef struct command_s
+{
+	char **line;
+	int error;
+} command_t;
+
 /*Global*/
-char *line;
+command_t global_command;
 
 /*Function for stack*/
 void monty(char *pathname);
 void free_stack(stack_t *head);
-void check_instruction(stack_t *m_stack, unsigned int line_number);
+void check_instruction(stack_t **m_stack, unsigned int line_number);
 void free_instruct_op(instruction_t *instruct);
 void push(stack_t **head, unsigned int line_number);
 void print_all(stack_t **head, unsigned int line_number);
 
 /*Function string*/
 char *_strdup(char *str);
+char **_strsplit(char *str, int c);
+void free_dptr(char **ptr);
+void clean_line(char *line);
+int is_not_number(char *num);
 
 #endif /*MONTY_H*/

@@ -7,40 +7,34 @@
 * push - add new element top of the stack
 * @head: head of list
 * @line_number: line error
-* 
+*
 */
 
 void push(stack_t **head, unsigned int line_number)
 {
-	int n;
-	char *token;
 	stack_t *new_element = NULL;
 
-	new_element = malloc(sizeof(stack_t));
+	(void)line_number;
+	new_element = (stack_t *)malloc(sizeof(stack_t));
 	if (new_element == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		free_stack(*head);
+		global_command.error = 1;
 		return;
 	}
 
-	token = strtok(NULL, " \t\n");
-	if (token[0] == '0' && strlen(token) == 1)
-		n = 0;
-	else
+	if (is_not_number(global_command.line[1]) == 1)
 	{
-		n = atoi(token);
-		if (n == 0)
-		{
-			fprintf(stderr, "L%u: usage: push integer\n", line_number);
-			free_stack(*head);
-			return;
-		}
+		free(new_element);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		global_command.error = 1;
+		return;
 	}
-	new_element->n = n;
+
+	new_element->n = atoi(global_command.line[1]);
 	new_element->prev = NULL;
 	new_element->next = *head;
-	if (*head != NULL)
+	if (*head)
 		(*head)->prev = new_element;
 	*head = new_element;
 }

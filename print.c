@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include "monty.h"
 
+
+/**
+* print_all - print stack
+* @head: top of the stack
+* @line_number: line of file
+*
+*/
 void print_all(stack_t **head, unsigned int line_number)
 {
 	stack_t *tmp;
