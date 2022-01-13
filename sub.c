@@ -8,7 +8,7 @@
  */
 
 
-void (stack_t **stack, unsigned int line_number)
+void sub(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp, *dlt;
 	int t, d, p;
