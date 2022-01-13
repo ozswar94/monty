@@ -30,7 +30,7 @@ void monty(char *pathname)
 		}
 		clean_line(line);
 		global_command.line = _strsplit(line, ' ');
-		if (global_command.line == NULL)
+		if (global_command.line == NULL || global_command.line[0][0] == '#')
 		{
 			line_number++;
 			continue;
@@ -64,7 +64,7 @@ void check_instruction(stack_t **m_stack, unsigned int line_number)
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
-		{"add", add},
+		{"nop", nop},
 		{NULL, NULL},
 	};
 
