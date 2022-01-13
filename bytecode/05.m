@@ -1,8 +1,8 @@
 push 1
 pint
-push 6
+push 2
 pint
-push 0
+push 4
 pint
 div
 pint

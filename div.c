@@ -24,7 +24,7 @@ void _div(stack_t **stack, unsigned int line_number)
 		{
 		t = (*stack)->n;
 		nx = (*stack)->next->n;
-		nx /= t;
+		t /= nx;
 		tmp = *stack;
 		(*stack) = (*stack)->next;
 		(*stack)->prev = NULL;
