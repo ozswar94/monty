@@ -83,9 +83,6 @@ int clean_line(char *line)
 	unsigned int i;
 	unsigned int size;
 
-	if (line[0] == '#')
-		return (1);
-
 	size = strlen(line) - 1;
 	if (line[size] == '\n')
 		line[size] = '\0';
@@ -93,5 +90,7 @@ int clean_line(char *line)
 	for (i = 0; line[i] != '\0'; i++)
 		if (line[i] == '\t')
 			line[i] = ' ';
+	if (line[0] == '#')
+		return (1);
 	return (0);
 }
