@@ -82,7 +82,7 @@ void clean_line(char *line)
 {
 	unsigned int i;
 	unsigned int size;
-	
+
 	if (line[0] == '#')
 	{
 		free(line);
