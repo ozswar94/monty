@@ -35,6 +35,8 @@ int is_not_number(char *num)
 {
 	int i = 0;
 
+	if (num == NULL)
+		return (1);
 	if (num[i] == '-' || num[i] == '+')
 		i++;
 	while (isdigit(num[i]) && num[i] != '\0')
