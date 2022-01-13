@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "monty.h"
-
 
 /**
 * print_all - print stack

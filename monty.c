@@ -1,12 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <fcntl.h>
 #include "monty.h"
-
 
 /**
 * monty - interpreteur monty
@@ -74,7 +66,6 @@ void check_instruction(stack_t **m_stack, unsigned int line_number)
 		{_strdup("pall"), print_all},
 		{NULL, NULL},
 	};
-
 
 	while (instruct[i].opcode != NULL)
 	{
