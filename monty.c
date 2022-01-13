@@ -59,14 +59,13 @@ void monty(char *pathname)
 void check_instruction(stack_t **m_stack, unsigned int line_number)
 {
 	int i = 0;
-
-	global_command.error = 0;
 	instruction_t instruct[] = {
-		{_strdup("push"), push},
-		{_strdup("pall"), print_all},
+		{"push", push},
+		{"pall", print_all},
 		{NULL, NULL},
 	};
 
+	global_command.error = 0;
 	while (instruct[i].opcode != NULL)
 	{
 		if (strcmp(global_command.line[0], instruct[i].opcode) == 0)
@@ -83,7 +82,7 @@ void check_instruction(stack_t **m_stack, unsigned int line_number)
 							line_number, global_command.line[0]);
 		global_command.error = 1;
 	}
-	free_instruct_op(instruct);
+	/*free_instruct_op(instruct);*/
 }
 
 /**
@@ -91,7 +90,7 @@ void check_instruction(stack_t **m_stack, unsigned int line_number)
 * @instruct: tab of strcut instruct
 *
 */
-void free_instruct_op(instruction_t *instruct)
+/*void free_instruct_op(instruction_t *instruct)
 {
 	int i = 0;
 
@@ -101,4 +100,4 @@ void free_instruct_op(instruction_t *instruct)
 		i++;
 	}
 	instruct = NULL;
-}
+}*/
