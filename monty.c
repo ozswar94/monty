@@ -66,8 +66,9 @@ void monty(char *pathname)
 */
 void check_instruction(stack_t **m_stack, unsigned int line_number)
 {
-	global_command.error = 0;
 	int i = 0;
+
+	global_command.error = 0;
 	instruction_t instruct[] = {
 		{_strdup("push"), push},
 		{_strdup("pall"), print_all},
