@@ -30,7 +30,7 @@ void monty(char *pathname)
 		}
 		clean_line(line);
 		global_command.line = _strsplit(line, ' ');
-		if (global_command.line == NULL)
+		if (global_command.line == NULL || global_command.line[0][0] == '#')
 		{
 			line_number++;
 			continue;
