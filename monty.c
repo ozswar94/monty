@@ -28,8 +28,9 @@ void monty(char *pathname)
 			fclose(m_file);
 			return;
 		}
-		if (clean_line(line))
+		if (line[0] == '#')
 			continue;
+		clean_line(line);
 		global_command.line = _strsplit(line, ' ');
 		if (global_command.line == NULL)
 			continue;
