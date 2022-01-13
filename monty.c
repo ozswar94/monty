@@ -32,8 +32,8 @@ void monty(char *pathname)
 		global_command.line = _strsplit(line, ' ');
 		if (global_command.line == NULL)
 		{
-			continue;
 			line_number++;
+			continue;
 		}
 		check_instruction(&m_stack, line_number);
 		if (global_command.error)
