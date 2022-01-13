@@ -1,28 +1,19 @@
 #include "monty.h"
-
 /**
  * swap - swaps the top two elements of the stack.
  * @stack: pointer to stack
  * @line_number: line_number
  * Return: always nothing
  */
-
 void swap(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp, *swp, *prev;
+	int tmp;
 
-	tmp = *stack;
-	if (tmp)
+	if ((*stack)->next)
 	{
-		while (tmp)
-			tmp = tmp->next;
-		swp = tmp->prev;
-		prev = swp->prev;
-		prev->next = tmp;
-		tmp->prev = prev;
-		tmp->next = swp;
-		swp->prev = tmp;
-		swp->next = NULL;
+		tmp = (*stack)->n;
+		(*stack)->n = (*stack)->next->n;
+		(*stack)->next->n = tmp;
 	}
 	else
 	{

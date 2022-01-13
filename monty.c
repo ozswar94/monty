@@ -63,6 +63,7 @@ void check_instruction(stack_t **m_stack, unsigned int line_number)
 		{"pall", print_all},
 		{"pint", pint},
 		{"pop", pop},
+		{"swap", swap},
 		{NULL, NULL},
 	};
 
