@@ -49,7 +49,6 @@ void monty(char *pathname)
 	}
 }
 
-
 /**
 * check_instruction - interpreteur monty
 * @m_stack: ptr top of stack
