@@ -66,10 +66,6 @@ void check_instruction(stack_t **m_stack, unsigned int line_number)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
-		{"sub", sub},
-		{"div", _div},
-		{"mul", mul},
-		{"mod", mod},
 		{NULL, NULL},
 	};
 
