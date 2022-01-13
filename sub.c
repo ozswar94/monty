@@ -1,6 +1,6 @@
 #include "monty.h"
 
-/*void div(stack_t **stack, unsigned int line_number)
+void sub(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp, *dlt;
 	int t, d, p;
@@ -24,4 +24,4 @@
 		printf("L<%d>: can't sub, stack too short\n", line_number);
 		global_command.error = 1;
 	}
-}*/
+}
