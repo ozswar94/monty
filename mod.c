@@ -10,26 +10,24 @@
 
 void mod(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp, *dlt;
-	int t, d, p;
+	stack_t *tmp;
+	int t, nx;
 
 	tmp = *stack;
-	if (tmp->next)
+	if ((*stack) && (*stack)->next)
 	{
-		while (tmp)
-			tmp = tmp->next;
-		dlt = tmp;
-		tmp = tmp->prev;
-		t = tmp->n;
-		d = dlt->n;
-		p = t % d;
-		tmp->n = p;
-		tmp->next = NULL;
-		free(dlt);
+		t = (*stack)->n;
+		nx = (*stack)->next->n;
+		nx %= t;
+		tmp = *stack;
+		(*stack) = (*stack)->next;
+		(*stack)->prev = NULL;
+		(*stack)->n = nx;
+		free(tmp);
 	}
 	else
 	{
-		printf("L<%d>: can't mod, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
 		global_command.error = 1;
 	}
 }
