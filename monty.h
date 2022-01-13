@@ -63,7 +63,6 @@ command_t global_command;
 void monty(char *pathname);
 void free_stack(stack_t *head);
 void check_instruction(stack_t **m_stack, unsigned int line_number);
-void free_instruct_op(instruction_t *instruct);
 void push(stack_t **head, unsigned int line_number);
 void print_all(stack_t **head, unsigned int line_number);
 

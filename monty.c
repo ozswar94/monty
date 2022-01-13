@@ -82,22 +82,4 @@ void check_instruction(stack_t **m_stack, unsigned int line_number)
 							line_number, global_command.line[0]);
 		global_command.error = 1;
 	}
-	/*free_instruct_op(instruct);*/
 }
-
-/**
-* free_instruct_op - free str on tab instruct
-* @instruct: tab of strcut instruct
-*
-*/
-/*void free_instruct_op(instruction_t *instruct)
-{
-	int i = 0;
-
-	while (instruct[i].opcode != NULL)
-	{
-		free(instruct[i].opcode);
-		i++;
-	}
-	instruct = NULL;
-}*/
