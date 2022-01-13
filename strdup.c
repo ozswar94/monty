@@ -36,6 +36,7 @@ char *_strdup(char *str)
 int is_not_number(char *num)
 {
 	int i = 0;
+
 	if (num[i] == '-' || num[i] == '+')
 		i++;
 	while (isdigit(num[i]) && num[i] != '\0')
