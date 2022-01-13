@@ -16,6 +16,11 @@ void mod(stack_t **stack, unsigned int line_number)
 	tmp = *stack;
 	if ((*stack) && (*stack)->next)
 	{
+		if ((*stack)->n == 0)
+		{
+			fprintf(stderr, "L%u: division by zero\n", line_number);
+			global_command.error = 1;
+		}
 		t = (*stack)->n;
 		nx = (*stack)->next->n;
 		nx %= t;
@@ -27,7 +32,7 @@ void mod(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
-		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
 		global_command.error = 1;
 	}
 }
