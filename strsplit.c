@@ -76,9 +76,9 @@ char **_strsplit(char *str, int c)
 /**
 * clean_line - clean tab and new line
 * @line: line of file
-* Return: 0 if succes, 1 if is a comment
+*
 */
-int clean_line(char *line)
+void clean_line(char *line)
 {
 	unsigned int i;
 	unsigned int size;
@@ -90,7 +90,4 @@ int clean_line(char *line)
 	for (i = 0; line[i] != '\0'; i++)
 		if (line[i] == '\t')
 			line[i] = ' ';
-	if (line[0] == '#')
-		return (1);
-	return (0);
 }
