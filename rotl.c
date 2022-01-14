@@ -13,10 +13,8 @@ void rotl(stack_t **stack, unsigned int line_number)
 	int counter = 0, t;
 	(void)line_number;
 
-	if ((*stack)->next == NULL)
-	{
+	if ((*stack) == NULL || (*stack)->next == NULL)
 		return;
-	}
 	else
 	{
 	last = *stack;
