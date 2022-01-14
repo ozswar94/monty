@@ -28,12 +28,14 @@ void monty(char *pathname)
 			fclose(m_file);
 			return;
 		}
-		if (line[0] == '#')
-			continue;
 		clean_line(line);
 		global_command.line = _strsplit(line, ' ');
-		if (global_command.line == NULL)
+		if (global_command.line == NULL || global_command.line[0][0] == '#')
+		{
+			if (global_command.line)
+				free_dptr(global_command.line);
 			continue;
+		}
 		check_instruction(&m_stack, line_number);
 		if (global_command.error)
 		{
@@ -89,3 +91,4 @@ void check_instruction(stack_t **m_stack, unsigned int line_number)
 		global_command.error = 1;
 	}
 }
+
