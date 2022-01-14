@@ -50,6 +50,7 @@ typedef struct command_s
 {
 	char **line;
 	int error;
+	int flag;
 } command_t;
 
 /*Global*/
@@ -75,7 +76,10 @@ void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
-
+void lifo(stack_t **stack, unsigned int line_number);
+void fifo(stack_t **stack, unsigned int line_number);
+void stack(stack_t **stack, unsigned int line_number);
+void queue(stack_t **stack, unsigned int line_number);
 
 /*Function string*/
 char *_strdup(char *str);

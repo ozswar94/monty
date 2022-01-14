@@ -13,6 +13,8 @@ int main(int argc, char **argv)
 		fprintf(stderr, "USAGE: monty file\n");
 		return (EXIT_FAILURE);
 	}
+	global_command.error = 0;
+	global_command.flag = 1;
 	monty(argv[1]);
 	return (0);
 }

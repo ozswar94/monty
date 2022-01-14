@@ -74,10 +74,11 @@ void check_instruction(stack_t **m_stack, unsigned int line_number)
 		{"pstr", pstr},
 		{"rotl", rotl},
 		{"rotr", rotr},
+		{"stack", stack},
+		{"queue", queue},
 		{NULL, NULL},
 	};
 
-	global_command.error = 0;
 	while (instruct[i].opcode != NULL)
 	{
 		if (strcmp(global_command.line[0], instruct[i].opcode) == 0)
