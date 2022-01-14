@@ -70,6 +70,7 @@ void check_instruction(stack_t **m_stack, unsigned int line_number)
 		{"div", _div},
 		{"mul", mul},
 		{"mod", mod},
+		{"pchar", pchar},
 		{NULL, NULL},
 	};
 
