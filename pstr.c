@@ -18,7 +18,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 		return;
 	}
 
-	while (isprint(tmp->n) && tmp != NULL)
+	while (tmp != NULL && isprint(tmp->n))
 	{
 		putchar(tmp->n);
 		tmp = tmp->next;
