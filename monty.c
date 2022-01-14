@@ -73,6 +73,7 @@ void check_instruction(stack_t **m_stack, unsigned int line_number)
 		{"pchar", pchar},
 		{"pstr", pstr},
 		{"rotl", rotl},
+		{"rotr", rotr},
 		{NULL, NULL},
 	};
 
